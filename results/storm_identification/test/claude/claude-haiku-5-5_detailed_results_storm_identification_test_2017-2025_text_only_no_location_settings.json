@@ -1,0 +1,17 @@
+{
+  "case_file": "model_inputs/storm_identification/test/storm_identification_test_2017-2025_text_only_no_location.jsonl.gz",
+  "model": "claude-haiku-5-5",
+  "effort": "model default",
+  "max_tokens": 32000,
+  "thinking": "adaptive (model default)",
+  "system_prompt": null,
+  "tools": null,
+  "with_images": false,
+  "message_order": "prompt text",
+  "anthropic_sdk": "1.13.0",
+  "batch_ids": [
+    "msgbatch_014dE6J2MKr6cYdQBmcQXG84"
+  ],
+  "pending_batch_ids": [],
+  "updated_utc": "2026-10-11 10:35:44"
+}

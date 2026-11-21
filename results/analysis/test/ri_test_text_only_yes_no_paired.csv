@@ -1,0 +1,3 @@
+comparison,metric,difference,95% CI,share of resamples won
+xgboost minus claude-sonnet-5-5,PSS,0.008,"[-0.062, 0.073]",0.588
+xgboost minus claude-sonnet-5-5,CSI,0.016,"[-0.011, 0.044]",0.892

@@ -1,0 +1,17 @@
+{
+  "case_file": "model_inputs/ri_prediction/test/test_2017-2025_50ri_50nori_text_only.jsonl.gz",
+  "model": "claude-haiku-5-5",
+  "effort": "medium",
+  "max_tokens": 16000,
+  "thinking": "adaptive (model default)",
+  "system_prompt": null,
+  "tools": null,
+  "with_images": false,
+  "message_order": "prompt text",
+  "anthropic_sdk": "1.12.1",
+  "batch_ids": [
+    "msgbatch_01NbNKJ28oY1b55vJ8Ley6Vk"
+  ],
+  "pending_batch_ids": [],
+  "updated_utc": "2026-10-08 17:01:07"
+}

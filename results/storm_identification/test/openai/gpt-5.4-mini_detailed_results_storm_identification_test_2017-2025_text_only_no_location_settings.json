@@ -1,0 +1,16 @@
+{
+  "case_file": "model_inputs/storm_identification/test/storm_identification_test_2017-2025_text_only_no_location.jsonl.gz",
+  "model": "gpt-5.4-mini",
+  "model_snapshot_reported": [
+    "gpt-5.4-mini-2026-03-17"
+  ],
+  "api": "chat.completions (every reply is a chat.completion object)",
+  "reasoning_effort": "not set (model default)",
+  "system_prompt": null,
+  "tools": null,
+  "with_images": false,
+  "made_by": "collaborator; reported as run with each model's default settings",
+  "first_reply_utc": "2026-10-11 12:22",
+  "last_reply_utc": "2026-10-11 12:25",
+  "n_answers": 1765
+}

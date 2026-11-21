@@ -1,0 +1,18 @@
+{
+  "case_file": "model_inputs/storm_identification/dev/storm_identification_dev_2016_text_only_with_location.jsonl.gz",
+  "model": "gpt-5-mini",
+  "model_snapshot_reported": [
+    "gpt-5-mini-2025-08-07"
+  ],
+  "api": "chat.completions",
+  "call": "client.chat.completions.create(model=MODEL, messages=[{'role': 'user', 'content': prompt}])",
+  "reasoning_effort": "not set (model default)",
+  "system_prompt": null,
+  "tools": null,
+  "with_images": false,
+  "parallel_calls": 16,
+  "made_by": "coauthor's script (before notebook 07b, which makes the same call)",
+  "first_reply_utc": "2026-10-07 04:40",
+  "last_reply_utc": "2026-10-07 04:46",
+  "n_answers": 720
+}

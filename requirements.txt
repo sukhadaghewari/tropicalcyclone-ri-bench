@@ -1,0 +1,13 @@
+numpy
+pandas
+requests
+pyarrow
+matplotlib
+xarray
+netCDF4
+pillow
+tqdm
+scikit-learn
+xgboost
+anthropic
+openai

@@ -1,0 +1,2 @@
+model,ROC-AUC,PR-AUC (random = 0.108),BSS vs dev climatology,"BSS, population-weighted",mean p / RI rate
+claude-haiku-5-5,"0.676 [0.624, 0.723]","0.172 [0.134, 0.223]","0.030 [0.001, 0.056]",0.018,0.137 / 0.108

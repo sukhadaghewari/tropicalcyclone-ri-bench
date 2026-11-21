@@ -1,0 +1,16 @@
+{
+  "case_file": "model_inputs/storm_identification/dev/storm_identification_dev_2016_text_only_no_location.jsonl.gz",
+  "model": "gpt-6-luna",
+  "model_snapshot_reported": [
+    "gpt-6-luna"
+  ],
+  "api": "chat.completions (every reply is a chat.completion object)",
+  "reasoning_effort": "not set (model default)",
+  "system_prompt": null,
+  "tools": null,
+  "with_images": false,
+  "made_by": "collaborator; reported as run with each model's default settings",
+  "first_reply_utc": "2026-10-09 03:45",
+  "last_reply_utc": "2026-10-09 03:54",
+  "n_answers": 720
+}

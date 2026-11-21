@@ -1,0 +1,19 @@
+{
+  "case_file": "model_inputs/ri_prediction/dev/dev_2016_20ri_20nori_text_image.jsonl.gz",
+  "model": "gpt-5-mini",
+  "model_snapshot_reported": [
+    "gpt-5-mini-2025-08-07"
+  ],
+  "api": "chat.completions (every reply is a chat.completion object)",
+  "reasoning_effort": "not set (model default)",
+  "system_prompt": null,
+  "tools": null,
+  "with_images": true,
+  "made_by": "collaborator; reported as run with each model's default settings",
+  "first_reply_utc": "2026-10-08 18:53",
+  "last_reply_utc": "2026-10-08 19:10",
+  "n_answers": 720,
+  "image_detail": "not recorded",
+  "message_order": "not recorded",
+  "image_tokens_observed": "every prompt is 1,221 tokens longer than the same case's text-only prompt (picture plus its description)"
+}

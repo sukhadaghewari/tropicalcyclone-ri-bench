@@ -1,0 +1,23 @@
+sid,name,basin,group,n_cases,claude-haiku-5-5 noloc,claude-haiku-5-5 loc,claude-sonnet-5-5 noloc,claude-sonnet-5-5 loc,gpt-5-mini noloc,gpt-5-mini loc,gpt-5.4-mini noloc,gpt-5.4-mini loc,gpt-5.6-luna noloc,gpt-5.6-luna loc,gpt-6-luna noloc,gpt-6-luna loc
+2016007N27285,ALEX,NA,no_ri,2,,,,obs 0 (1/2),,,,,,,,obs 1 (1/2)
+2016185N11253,BLAS,EP,ri,26,,,obs 24 (1/26),obs 4 (10/26),,,,,,,,
+2016230N12328,FIONA,NA,no_ri,23,,,,obs 12 (8/23),,,,,,,,obs 12 (4/23)
+2016235N11341,GASTON,NA,ri,41,,,obs 28 (7/41),obs 5 (14/41),,,,,obs 30 (2/41),obs 7 (3/41),obs 24 (3/41),obs 12 (1/41)
+2016214N15240,HOWARD,EP,no_ri,8,,,,,,,,,,obs 7 (1/8),,
+2016257N27280,JULIA,NA,no_ri,13,,,,obs 5 (2/13),,,,,,obs 7 (1/13),,
+2016295N13089,KYANT,NI,no_ri,23,,obs 22 (1/23),,obs 13 (2/23),,,,,,obs 19 (1/23),,obs 13 (1/23)
+2016230N25160,LIONROCK,WP,ri,47,,,,,,,,,,obs 13 (10/47),,obs 25 (8/47)
+2016240N13224,MADELINE,EP,ri,24,,,obs 21 (2/24),obs 11 (5/24),,,,,,,,obs 17 (3/24)
+2016207N17116,MIRINAE,WP,no_ri,4,,,,obs 3 (1/4),,,,,,,,
+2016335N07088,NADA,NI,no_ri,6,,obs 4 (1/6),,,,,,,,,,
+2016185N08145,NEPARTAK,WP,ri,19,,,,obs 16 (3/19),,,,,,,,obs 16 (2/19)
+2016248N15255,NEWTON,EP,ri,6,,,,obs 5 (1/6),,,,,,,,obs 5 (1/6)
+2016278N23300,NICOLE,NA,ri,53,,obs 48 (1/53),,obs 29 (23/53),,,,,obs 30 (4/53),obs 42 (5/53),obs 34 (2/53),obs 8 (15/53)
+2016323N13279,OTTO,NA,ri,16,,obs 2 (11/16),,obs 0 (13/16),,obs 15 (1/16),,,,obs 2 (8/16),obs 13 (2/16),obs 2 (12/16)
+2016262N16251,PAINE,EP,ri,7,,,,,,,,,,,,obs 6 (1/7)
+2016006N02188,PALI,EP,no_ri,26,,obs 6 (5/26),,obs 1 (15/26),,obs 0 (15/26),,,,obs 1 (17/26),,obs 2 (16/26)
+2016296N11262,SEYMOUR,EP,ri,16,,,,,,,,,,,,obs 14 (1/16)
+2015330S10178,TUNI,SP,no_ri,11,,,,obs 10 (1/11),,,,,,obs 10 (1/11),,obs 8 (1/11)
+2015364S09190,ULA,SP,ri,54,,,,obs 46 (7/54),,,,,,obs 9 (9/54),,obs 34 (9/54)
+2016270N12223,ULIKA,EP,ri,13,,,,,,,,,,,,obs 4 (2/13)
+2016041S14170,WINSTON,SP,ri,55,,obs 39 (6/55),obs 40 (11/55),obs 32 (20/55),,obs 39 (16/55),,,obs 27 (15/55),obs 1 (34/55),obs 27 (13/55),obs 27 (21/55)

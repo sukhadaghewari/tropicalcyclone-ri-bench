@@ -1,0 +1,7 @@
+phase,metric,xgboost,claude-sonnet-5-5,difference,95% CI,share of resamples won,resamples used
+RI already underway,PR-AUC,0.785,0.56,0.225,"[0.026, 0.433]",0.988,2000
+RI already underway,ROC-AUC,0.954,0.902,0.052,"[0.007, 0.107]",0.982,2000
+no 24 h history,PR-AUC,0.329,0.27,0.059,"[0.004, 0.130]",0.981,2000
+no 24 h history,ROC-AUC,0.78,0.737,0.043,"[-0.005, 0.097]",0.956,2000
+quiet (onset),PR-AUC,0.368,0.328,0.04,"[-0.027, 0.110]",0.863,2000
+quiet (onset),ROC-AUC,0.831,0.834,-0.003,"[-0.032, 0.024]",0.42,2000

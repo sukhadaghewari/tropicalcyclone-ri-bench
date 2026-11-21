@@ -1,0 +1,82 @@
+{
+  "usa_wind": {
+    "meaning": "Maximum sustained surface wind of the storm at the record time, as reported by the US agency responsible for the basin (NHC, CPHC or JTWC), 1-minute average at 10 m height. It is the storm's current strength and the baseline from which rapid intensification is defined.",
+    "type": "float",
+    "unit": "knots (kt)"
+  },
+  "usa_sshs": {
+    "meaning": "Saffir-Simpson Hurricane Scale category derived from usa_wind: -5 unknown, -4 post-tropical, -3 miscellaneous disturbance, -2 subtropical, -1 tropical depression, 0 tropical storm, 1 to 5 hurricane categories. It gives a coarse intensity class; it is largely redundant with usa_wind. Codes -2 to -5 mark non-tropical or unknown systems; -1 (tropical depression) is still a tropical system, just weaker than a tropical storm (0).",
+    "type": "integer (ordinal category)",
+    "unit": "none"
+  },
+  "dist2land": {
+    "meaning": "Distance from the storm centre to the nearest land at the record time, zero when the centre is over land. It captures land interaction: storms near or over land lose their ocean energy source and rarely intensify.",
+    "type": "integer",
+    "unit": "kilometres (km)"
+  },
+  "usa_wind_delta_tminus6h": {
+    "meaning": "Change in usa_wind over the past 6 hours (current value minus the value 6 hours earlier), missing when the earlier value is missing. It is the short-term intensity trend; a positive value means the storm is already strengthening, and recent strengthening tends to continue.",
+    "type": "float (nullable)",
+    "unit": "knots per 6 hours"
+  },
+  "usa_wind_delta_tminus12h": {
+    "meaning": "Change in usa_wind over the past 12 hours (current value minus the value 12 hours earlier), missing when the earlier value is missing. It is the half-day intensity trend, the quantity operational schemes call persistence.",
+    "type": "float (nullable)",
+    "unit": "knots per 12 hours"
+  },
+  "usa_wind_delta_tminus24h": {
+    "meaning": "Change in usa_wind over the past 24 hours (current value minus the value 24 hours earlier), missing when the earlier value is missing. It is the day-long trend; a value of +30 or more means the storm has just rapidly intensified, so it separates the onset of rapid intensification from its continuation.",
+    "type": "float (nullable)",
+    "unit": "knots per 24 hours"
+  },
+  "sea_surface_temp_200km_mean": {
+    "meaning": "Sea surface temperature averaged over all ocean grid cells within 200 km of the storm centre. It measures the ocean heat available to the storm: roughly 299.65 K (26.5 deg C) is commonly cited as the minimum for development, and warmer water generally allows a stronger storm.",
+    "type": "float",
+    "unit": "kelvin (K)"
+  },
+  "sea_level_pressure_200km_mean": {
+    "meaning": "Mean sea level pressure averaged over grid cells within 200 km of the storm centre. It shows how deep the low is as seen by the gridded analysis: lower means a stronger or better-organised circulation, though coarse grids understate intense storms.",
+    "type": "float",
+    "unit": "pascals (Pa)"
+  },
+  "column_water_vapour_200km_mean": {
+    "meaning": "Total water vapour in the atmospheric column, averaged within 200 km of the storm centre. It measures how moist the storm's surroundings are: higher values (roughly above 55 to 60) generally support deep convection, while dry air tends to suppress intensification.",
+    "type": "float",
+    "unit": "kg per square metre (equal to mm of precipitable water)"
+  },
+  "wind_east_200hPa_annulus_mean": {
+    "meaning": "Eastward wind component (positive toward the east) at the 200 hPa level (about 12 km altitude), averaged over a ring of 200 to 800 km radius around the storm centre. It is the east-west part of the upper-level environmental flow and one of four inputs to the shear calculation.",
+    "type": "float",
+    "unit": "metres per second (m/s)"
+  },
+  "wind_north_200hPa_annulus_mean": {
+    "meaning": "Northward wind component (positive toward the north) at 200 hPa, averaged over the same ring. It is the north-south part of the upper-level environmental flow and an input to the shear calculation.",
+    "type": "float",
+    "unit": "metres per second (m/s)"
+  },
+  "wind_east_850hPa_annulus_mean": {
+    "meaning": "Eastward wind component (positive toward the east) at the 850 hPa level (about 1.5 km altitude), averaged over the same ring. It is the east-west part of the low-level environmental flow and an input to the shear calculation.",
+    "type": "float",
+    "unit": "metres per second (m/s)"
+  },
+  "wind_north_850hPa_annulus_mean": {
+    "meaning": "Northward wind component (positive toward the north) at 850 hPa, averaged over the same ring. It is the north-south part of the low-level environmental flow and an input to the shear calculation.",
+    "type": "float",
+    "unit": "metres per second (m/s)"
+  },
+  "wind_shear_annulus_ms": {
+    "meaning": "Magnitude of the deep-layer vertical wind shear: the length of the vector difference between the 200 hPa and 850 hPa ring-mean winds. It measures how much the wind changes with height around the storm: low shear (roughly below 5 m/s) is generally favourable for rapid intensification, while strong shear (roughly above 10 m/s) tilts and ventilates the storm and usually hinders it.",
+    "type": "float",
+    "unit": "metres per second (m/s)"
+  },
+  "cold_cloud_fraction_100km": {
+    "meaning": "Fraction (0 to 1) of infrared satellite pixels within 100 km of the storm centre whose brightness temperature is colder than a fixed threshold. Missing when no satellite data is available for that time. It shows how much of the inner core is covered by deep, cold-topped convection; a high and rising value often precedes intensification.",
+    "type": "float (nullable)",
+    "unit": "dimensionless fraction"
+  },
+  "cold_cloud_fraction_200km": {
+    "meaning": "The same cold-pixel fraction (0 to 1) computed within 200 km of the storm centre. Missing when no satellite data is available for that time. It shows the extent of deep convection over the wider storm; compared with the 100 km value, it tells whether convection is concentrated at the core or spread out.",
+    "type": "float (nullable)",
+    "unit": "dimensionless fraction"
+  }
+}

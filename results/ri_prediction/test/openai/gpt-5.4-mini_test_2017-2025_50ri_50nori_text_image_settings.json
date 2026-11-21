@@ -1,0 +1,24 @@
+{
+  "case_file": "model_inputs/ri_prediction/test/test_2017-2025_50ri_50nori_text_image.jsonl.gz",
+  "model": "gpt-5.4-mini",
+  "model_snapshot_reported": [
+    "gpt-5.4-mini-2026-03-17"
+  ],
+  "api": "chat.completions (every reply is a chat.completion object)",
+  "reasoning_effort": "not set (model default)",
+  "system_prompt": null,
+  "tools": null,
+  "with_images": true,
+  "made_by": "collaborator; reported as run with each model's default settings",
+  "first_reply_utc": "2026-10-08 19:13",
+  "last_reply_utc": "2026-10-08 19:18",
+  "n_answers": 1765,
+  "image_detail": "not recorded",
+  "message_order": "not recorded",
+  "image_tokens_observed": "every prompt is 1,221 tokens longer than the same case's text-only prompt (picture plus its description)",
+  "format_fixed_case_ids": [
+    "2018268N14253_024",
+    "2018294N08161_003",
+    "2023239N18144_006"
+  ]
+}

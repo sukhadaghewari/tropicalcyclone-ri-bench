@@ -1,0 +1,17 @@
+{
+  "case_file": "model_inputs/storm_identification/dev/storm_identification_dev_2016_text_only_with_location.jsonl.gz",
+  "model": "claude-sonnet-5-5",
+  "effort": "model default",
+  "max_tokens": 32000,
+  "thinking": "adaptive (model default)",
+  "system_prompt": null,
+  "tools": null,
+  "with_images": false,
+  "message_order": "prompt text",
+  "anthropic_sdk": "1.12.1",
+  "batch_ids": [
+    "msgbatch_017u53v6G3AQJFVF7LSxi9y8"
+  ],
+  "pending_batch_ids": [],
+  "updated_utc": "2026-10-08 18:55:22"
+}

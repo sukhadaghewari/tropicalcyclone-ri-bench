@@ -1,0 +1,21 @@
+{
+  "case_file": "model_inputs/ri_prediction/test/test_2017-2025_50ri_50nori_image_only.jsonl.gz",
+  "model": "claude-sonnet-5-5",
+  "effort": "model default",
+  "max_tokens": 32000,
+  "thinking": "adaptive (model default)",
+  "system_prompt": null,
+  "tools": null,
+  "with_images": true,
+  "message_order": "prompt text, then picture",
+  "anthropic_sdk": "1.14.0",
+  "batch_ids": [
+    "msgbatch_014FxtHtvEAHtnH9CfJ56FSE",
+    "msgbatch_01DzUKr9S91cZGfe2pPLycER",
+    "msgbatch_013p3KFvze2fAZhFzLcjAPeT",
+    "msgbatch_01MhsYsYZABH24jCQ74Z9hpS",
+    "msgbatch_011QRaWymc5pS7DiAGWhb4qu"
+  ],
+  "pending_batch_ids": [],
+  "updated_utc": "2026-10-15 17:30:28"
+}

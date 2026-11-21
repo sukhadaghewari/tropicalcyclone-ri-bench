@@ -1,0 +1,17 @@
+{
+  "lat": {
+    "meaning": "Latitude of the storm centre. It represents the north-south position of the storm, with negative values in the Southern Hemisphere and positive values in the Northern Hemisphere.",
+    "type": "float",
+    "unit": "degrees"
+  },
+  "lon": {
+    "meaning": "Longitude of the storm centre. It represents the east-west position of the storm, measured in degrees east from 0° to 360° (for example, 280° is 80° W).",
+    "type": "float",
+    "unit": "degrees"
+  },
+  "abs_lat": {
+    "meaning": "Absolute value of the storm-centre latitude, i.e. distance from the equator in either hemisphere. Higher values mean stronger Coriolis force, and usually cooler water and more shear.",
+    "type": "float",
+    "unit": "degrees"
+  }
+}

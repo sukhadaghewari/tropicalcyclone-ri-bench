@@ -1,0 +1,18 @@
+{
+  "case_file": "model_inputs/ri_prediction/dev/dev_2016_20ri_20nori_text_only.jsonl.gz",
+  "model": "gpt-6-luna",
+  "model_snapshot_reported": [
+    "gpt-6-luna"
+  ],
+  "api": "chat.completions",
+  "call": "client.chat.completions.create(model=MODEL, messages=[{'role': 'user', 'content': prompt}])",
+  "reasoning_effort": "not set (model default)",
+  "system_prompt": null,
+  "tools": null,
+  "with_images": false,
+  "parallel_calls": 16,
+  "made_by": "coauthor's script (before notebook 07b, which makes the same call)",
+  "first_reply_utc": "2026-10-08 04:59",
+  "last_reply_utc": "2026-10-08 05:05",
+  "n_answers": 720
+}

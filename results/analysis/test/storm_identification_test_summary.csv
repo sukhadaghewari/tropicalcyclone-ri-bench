@@ -1,0 +1,7 @@
+model,probe,"cases correct, name only","cases correct, name + season",named storms identified,answered unknown,unparseable answers,mean confidence correct / wrong
+claude-haiku-5-5,no_location,0 (0.0%),0 (0.0%),0/93,98.3%,0,- / 0.35
+claude-sonnet-5-5,no_location,12 (0.7%),12 (0.7%),5/93,86.2%,0,0.54 / 0.39
+gpt-5-mini,no_location,0 (0.0%),0 (0.0%),0/93,99.4%,0,- / 0.33
+gpt-5.4-mini,no_location,0 (0.0%),0 (0.0%),0/93,77.8%,0,- / 0.58
+gpt-5.6-luna,no_location,22 (1.2%),19 (1.1%),8/93,60.3%,0,0.77 / 0.68
+gpt-6-luna,no_location,26 (1.5%),25 (1.4%),7/93,79.5%,0,0.80 / 0.71

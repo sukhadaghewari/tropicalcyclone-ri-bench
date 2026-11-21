@@ -1,0 +1,12 @@
+sid,name,basin,group,n_cases,claude-haiku-5-5 noloc,claude-sonnet-5-5 noloc,gpt-5-mini noloc,gpt-5.4-mini noloc,gpt-5.6-luna noloc,gpt-6-luna noloc
+2018186N10325,BERYL,NA,ri,12,,,,,obs 11 (1/12),obs 9 (1/12)
+2021182N09317,ELSA,NA,ri,22,,obs 13 (1/22),,,obs 11 (2/22),
+2020306N15288,ETA,NA,ri,31,,obs 15 (4/31),,,obs 15 (3/31),obs 14 (7/31)
+2018182N11256,FABIO,EP,no_ri,18,,,,,,obs 16 (1/18)
+2023232N13300,FRANKLIN,NA,ri,42,,,,,,obs 40 (1/42)
+2019278N16165,HAGIBIS,WP,ri,27,,obs 19 (4/27),,,obs 12 (4/27),obs 14 (7/27)
+2024274N14328,KIRK,NA,ri,27,,,,,obs 23 (1/27),
+2017258N10337,LEE,NA,ri,46,,obs 34 (1/46),,,obs 33 (2/46),obs 26 (2/46)
+2018280N18273,MICHAEL,NA,ri,10,,,,,obs 5 (1/10),
+2017200N26162,NORU,WP,ri,68,,,,,obs 39 (5/68),obs 40 (6/68)
+2018269N11220,WALAKA,EP,ri,24,,obs 11 (2/24),,,,
