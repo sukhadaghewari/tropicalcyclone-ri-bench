@@ -94,7 +94,7 @@ def fig_test_scores():
     fig.legend(handles=handles, loc="lower center", ncol=3, frameon=False, fontsize=8.5, bbox_to_anchor=(0.55, -0.03),
                handlelength=2.2, columnspacing=2.0)
     fig.tight_layout(rect=(0, 0.07, 1, 1))
-    fig.savefig(OUT / "fig_test_scores.pdf", bbox_inches="tight")
+    fig.savefig(OUT / "fig_test_scores.pdf", bbox_inches="tight", metadata={"CreationDate": None})
     plt.close(fig)
 
 
@@ -126,7 +126,7 @@ def fig_onset():
     for side in ("top", "right"):
         ax.spines[side].set_visible(False)
     fig.tight_layout()
-    fig.savefig(OUT / "fig_onset.pdf", bbox_inches="tight")
+    fig.savefig(OUT / "fig_onset.pdf", bbox_inches="tight", metadata={"CreationDate": None})
     plt.close(fig)
 
 

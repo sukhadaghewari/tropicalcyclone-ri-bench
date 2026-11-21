@@ -1,63 +1,64 @@
-# Can Multimodal LLMs Predict Rapid Intensification?
+# Can Multimodal LLMs Predict Rapid Intensification? A Leakage-Controlled Zero-Shot Benchmark for Tropical Cyclones
 
-Code, data, and results for the paper **"Can Multimodal LLMs Predict Rapid Intensification? A Leakage-Controlled Zero-Shot Benchmark for Tropical Cyclones"** (GeoCV Workshop, WACV 2027).
+This repository contains the official code for our **GeoCV Workshop @ WACV 2027** paper: **Can Multimodal LLMs Predict Rapid Intensification? A Leakage-Controlled Zero-Shot Benchmark for Tropical Cyclones**
 
-**Task.** A storm undergoes rapid intensification (RI) if its maximum sustained wind rises by 30 kt or more in the next 24 hours. For each 6-hourly observation, a model sees the storm's history so far and returns an RI probability.
+## Overview
 
-**Benchmark.** 2,485 cases from 140 storms (2016–2025), built from IBTrACS best tracks, ERA5 environmental features, and GridSat-B1 infrared images. Each case has 16 tabular features per past observation and, optionally, the latest eight satellite images. Storm names, dates, latitude, and longitude are removed so that models cannot recognise the storm.
+Rapid intensification (RI) is a rise of at least 30 kt in a tropical cyclone's maximum sustained wind within 24 hours. We test whether general-purpose multimodal LLMs can predict RI without task-specific training, and whether satellite images help.
+
+We evaluate six commercial LLMs (GPT-5 mini, GPT-5.4 mini, GPT-5.6 Luna, GPT-6 Luna, Claude Haiku 5.5, and Claude Sonnet 5.5) on 2,485 six-hourly forecast cases from 140 storms (2016–2025). Each case gives the model the storm's history as 16 tabular features per observation, optionally with infrared images of the last eight observations. Storm names, dates, latitude, and longitude are removed so that models cannot recognise the storm and recall its outcome.
+
+All six models reach PR-AUCs of 0.22–0.34, about two to three times the chance level of 0.11. Satellite images give no clear gain. An XGBoost model trained on 1980–2015 storms beats the best LLM (PR-AUC 0.439 against 0.344).
+
+![Benchmark overview](assets/overview.png)
+
+## Installation
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Data
 
 | Set | Seasons | Storms | Cases (RI) | Use |
 |---|---|---|---|---|
 | Development | 2016 | 40 (20 with RI) | 720 (94) | choose each model's threshold |
 | Test | 2017–2025 | 100 (50 with RI) | 1,765 (190) | final evaluation |
 
-**Models.** GPT-5 mini, GPT-5.4 mini, GPT-5.6 Luna, GPT-6 Luna, Claude Haiku 5.5, and Claude Sonnet 5.5, all zero-shot. An XGBoost model trained on 1980–2015 storms is the trained baseline.
+All inputs and model answers are included: storm data in `data/`, case files in `model_inputs/`, and raw answers in `results/`. Only the satellite images (about 900 MB) are not in git. `scripts/download_images.sh` rebuilds them.
 
-## Setup
+## Building the benchmark
+
+These steps rebuild the committed inputs. They are only needed to change the benchmark.
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt jupyterlab
+# Build the storm dataset from IBTrACS and ERA5 features
+bash scripts/build_dataset.sh
+# Sample dev/test storms and build all case files
+bash scripts/build_prompts.sh
+# Download and combine the GridSat-B1 satellite images
+bash scripts/download_images.sh
 ```
 
-Each notebook also runs in Colab. Its first code cell clones the repo and moves into it.
+To query the LLMs, open `notebooks/07a_run_claude.ipynb` (Anthropic) or `notebooks/07b_run_openai_gpt.ipynb` (OpenAI). Set the case file and model at the top, then run all cells. An API key is required.
 
-## Repository layout
+## Evaluation
 
-```
-data/            storm observations with features and RI labels (2016–2025, and 1980–2015 for XGBoost)
-prompt/          prompt templates and the feature dictionary
-src/prompts.py   builds prompts and case files, and parses model answers
-src/make_result_figures.py   draws the result figures into results/figures/
-model_inputs/    case files (one prompt per case) and the dev/test split
-notebooks/       the full pipeline, numbered in run order
-results/         raw model answers, scores, and figures
+```bash
+# Rebuild every table and figure from the saved answers (no API calls)
+bash scripts/evaluate.sh
 ```
 
-## Reproducing the paper
+This scores the storm-identification probe, trains the XGBoost baseline, chooses each model's threshold on the development set, and scores the test set with storm-bootstrap confidence intervals. Tables go to `results/analysis/` and figures to `results/figures/`.
 
-Every model answer is already in `results/`, so the scores can be rebuilt without any API calls. Run notebooks 08, 10, and 09, then `python src/make_result_figures.py`.
+## Acknowledgements
 
-| Step | Notebook | Output |
-|---|---|---|
-| Build the dataset | `01_prepare_storm_data` | `data/` |
-| Sample storms and build prompts | `02_make_prompt_files` | `model_inputs/ri_prediction/`, `model_inputs/splits/` |
-| Check the prompts | `03_check_prompt_files` | – |
-| Download satellite images | `04_download_satellite_images` | `model_inputs/images/` (about 900 MB, not in git) |
-| Build the storm-identification probe | `05_make_storm_identification_prompts` | `model_inputs/storm_identification/` |
-| Combine images into one picture per case | `06_combine_satellite_images` | `model_inputs/images/combined/` |
-| Query the LLMs | `07a_run_claude`, `07b_run_openai_gpt` | `results/ri_prediction/`, `results/storm_identification/` |
-| Score the identification probe | `08_score_storm_identification` | `results/analysis/*/storm_identification_*` |
-| Score RI (thresholds on dev, frozen for test) | `09_score_ri_predictions` | `results/analysis/dev/ri_dev_*`, `results/analysis/test/ri_test_*` |
-| XGBoost baseline | `10_xgboost_baseline` | `results/ri_prediction/*/ml/` |
+- The ERA5 and satellite features, and the XGBoost setup, come from the [CCAI tropical cyclone RI tutorial](https://github.com/ccai-tropicalcycloneri-tutorial-2026/tropicalcycloneriprediction) (MIT License, Copyright (c) 2026 climatechange-ai-tutorials).
+- Storm tracks are from [IBTrACS v04r01](https://www.ncei.noaa.gov/products/international-best-track-archive) and infrared images from [GridSat-B1](https://www.ncei.noaa.gov/products/gridded-geostationary-brightness-temperature), both by NOAA NCEI.
+- Contains modified Copernicus Climate Change Service information (ERA5).
 
-Steps 01–06 only need re-running to rebuild the inputs. Notebook 02 reproduces the committed case files exactly (seed 42). Step 07 needs an Anthropic or OpenAI API key.
+## License
 
-In notebook 09, set `VERSION` to `"_text_only"` (tabular history) or `"_text_image"` (history plus images). The images-only results are in `results/analysis/test/ri_test_image_only_*`.
-
-## Data sources
-
-- [IBTrACS v04r01](https://www.ncei.noaa.gov/products/international-best-track-archive) best tracks (NOAA NCEI).
-- ERA5-derived and satellite-derived features from the [CCAI tropical cyclone RI tutorial dataset](https://github.com/ccai-tropicalcycloneri-tutorial-2026/tropicalcycloneriprediction/releases/tag/dataset_v4) (`dataset_v4`). The XGBoost baseline follows that tutorial's setup.
-- [GridSat-B1](https://www.ncei.noaa.gov/products/gridded-geostationary-brightness-temperature) infrared images (NOAA NCEI).
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.

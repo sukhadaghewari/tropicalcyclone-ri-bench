@@ -1,0 +1,7 @@
+model,BSS as given,BSS recalibrated on dev,PR-AUC as given,PR-AUC recalibrated
+claude-haiku-5-5,0.111,0.098,0.289,0.274
+claude-sonnet-5-5,0.154,0.133,0.333,0.316
+gpt-5-mini,0.001,0.073,0.233,0.221
+gpt-5.4-mini,0.048,0.069,0.239,0.221
+gpt-5.6-luna,0.003,0.071,0.231,0.22
+gpt-6-luna,0.099,0.099,0.304,0.278

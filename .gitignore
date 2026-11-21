@@ -6,3 +6,4 @@ __pycache__/
 *.jsonl
 model_inputs/images/
 .gridsat_tmp/
+runs/

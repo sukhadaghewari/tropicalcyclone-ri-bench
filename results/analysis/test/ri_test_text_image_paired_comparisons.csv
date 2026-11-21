@@ -1,0 +1,16 @@
+comparison,metric,difference,95% CI,p (bootstrap)
+claude-sonnet-5-5 minus claude-haiku-5-5,PR-AUC,0.045,"[0.004, 0.087]",0.038
+claude-sonnet-5-5 minus claude-haiku-5-5,BSS,0.043,"[0.012, 0.074]",0.01
+claude-sonnet-5-5 minus claude-haiku-5-5,ROC-AUC,0.043,"[0.020, 0.069]",0.0
+claude-sonnet-5-5 minus gpt-5-mini,PR-AUC,0.101,"[0.053, 0.150]",0.0
+claude-sonnet-5-5 minus gpt-5-mini,BSS,0.152,"[0.113, 0.191]",0.0
+claude-sonnet-5-5 minus gpt-5-mini,ROC-AUC,0.073,"[0.044, 0.100]",0.0
+claude-sonnet-5-5 minus gpt-5.4-mini,PR-AUC,0.095,"[0.046, 0.142]",0.0
+claude-sonnet-5-5 minus gpt-5.4-mini,BSS,0.106,"[0.075, 0.135]",0.0
+claude-sonnet-5-5 minus gpt-5.4-mini,ROC-AUC,0.077,"[0.048, 0.105]",0.0
+claude-sonnet-5-5 minus gpt-5.6-luna,PR-AUC,0.102,"[0.061, 0.145]",0.0
+claude-sonnet-5-5 minus gpt-5.6-luna,BSS,0.151,"[0.111, 0.190]",0.0
+claude-sonnet-5-5 minus gpt-5.6-luna,ROC-AUC,0.065,"[0.039, 0.090]",0.0
+claude-sonnet-5-5 minus gpt-6-luna,PR-AUC,0.029,"[-0.004, 0.066]",0.083
+claude-sonnet-5-5 minus gpt-6-luna,BSS,0.055,"[0.027, 0.083]",0.0
+claude-sonnet-5-5 minus gpt-6-luna,ROC-AUC,0.044,"[0.018, 0.073]",0.001
