@@ -20,6 +20,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Tested with Python 3.14. `requirements.txt` pins the exact package versions that reproduce the paper.
+
 ## Data
 
 | Set | Seasons | Storms | Cases (RI) | Use |

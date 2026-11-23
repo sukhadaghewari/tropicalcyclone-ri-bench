@@ -14,7 +14,6 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent   # repo root (this file is in src/)
 PROMPT_DIR = ROOT / "prompt"
-INPUTS_DIR = ROOT / "model_inputs"                      # case files, and images/ beside them
 
 FEATURES = ["usa_wind", "usa_sshs", "dist2land", "usa_wind_delta_tminus6h", "usa_wind_delta_tminus12h", "usa_wind_delta_tminus24h", "sea_surface_temp_200km_mean", "sea_level_pressure_200km_mean", "column_water_vapour_200km_mean", "wind_east_200hPa_annulus_mean", "wind_north_200hPa_annulus_mean", "wind_east_850hPa_annulus_mean", "wind_north_850hPa_annulus_mean", "wind_shear_annulus_ms", "cold_cloud_fraction_100km", "cold_cloud_fraction_200km"]
 TARGET = "ri_tplus24"
@@ -44,9 +43,10 @@ FEATURE_DICT = json.loads(FEATURE_DICT_TEXT)
 assert list(FEATURE_DICT) == FEATURES, "features.json does not match FEATURES"
 
 # RI with satellite pictures (notebook 06's combined picture, sent after the prompt text): the RI prompt plus a
-# description of the picture ("text_image").
+# description of the picture ("text_image"), or the picture alone with no storm history ("image_only").
 IMAGE_TEMPLATES = {
     "text_image": (PROMPT_DIR / "ri_prediction_text_image.md").read_text(),
+    "image_only": (PROMPT_DIR / "ri_prediction_image_only.md").read_text(),
 }
 
 # Storm-identification probe: its own template, and descriptions of the location features (used only there).
@@ -106,13 +106,6 @@ def prompt_for_row(df_eval, i):
     return build_prompt(history), int(row[TARGET])
 
 
-def iter_prompts(df_eval):
-    """Yield (row_index, prompt, label) for every row of df_eval, building each prompt only when requested."""
-    for i in df_eval.index:
-        prompt, label = prompt_for_row(df_eval, i)
-        yield i, prompt, label
-
-
 def case_id(row):
     """Unique key of one observation: storm ID + 3-digit observation number, e.g. 2016240N13224_007."""
     return f"{row['sid']}_{int(row['obs_index']):03d}"
@@ -169,7 +162,7 @@ def write_cases(df_eval, path, split):
 
 
 def build_image_prompt(history, variant):
-    """RI prompt to send with the case's combined picture: "text_image" (history + picture)."""
+    """RI prompt to send with the case's combined picture: "text_image" (history + picture) or "image_only"."""
     prompt = (IMAGE_TEMPLATES[variant]
               .replace("{{FEATURE_DICTIONARY_JSON}}", FEATURE_DICT_TEXT)
               .replace("{{HISTORY_JSON}}", history_to_json(history)))
