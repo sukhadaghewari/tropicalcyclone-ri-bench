@@ -2,6 +2,8 @@
 
 This repository contains the official code for our **GeoCV Workshop @ WACV 2027** paper: **Can Multimodal LLMs Predict Rapid Intensification? A Leakage-Controlled Zero-Shot Benchmark for Tropical Cyclones**
 
+[![Satellite images on Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.24463276.svg)](https://doi.org/10.5281/zenodo.24463276)
+
 ## Overview
 
 Rapid intensification (RI) is a rise of at least 30 kt in a tropical cyclone's maximum sustained wind within 24 hours. We test whether general-purpose multimodal LLMs can predict RI without task-specific training, and whether satellite images help.
@@ -29,7 +31,9 @@ Tested with Python 3.14. `requirements.txt` pins the exact package versions that
 | Development | 2016 | 40 (20 with RI) | 720 (94) | choose each model's threshold |
 | Test | 2017–2025 | 100 (50 with RI) | 1,765 (190) | final evaluation |
 
-All inputs and model answers are included: storm data in `data/`, case files in `model_inputs/`, and raw answers in `results/`. Only the satellite images (about 900 MB) are not in git. `scripts/download_images.sh` rebuilds them.
+All inputs and model answers are included: storm data in `data/`, case files in `model_inputs/`, and raw answers in `results/`.
+
+The satellite images (1.3 GB) are on Zenodo: [doi:10.5281/zenodo.24463276](https://doi.org/10.5281/zenodo.24463276). Download the zip and unzip it into `model_inputs/`, so the images sit in `model_inputs/images/`. They are only needed to re-run the LLMs with images. `scripts/download_images.sh` can also rebuild them from GridSat-B1 (about 73 GB of downloads).
 
 ## Building the benchmark
 
